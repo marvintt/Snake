@@ -1,4 +1,5 @@
 from turtle import Screen
+from food import Food
 from snake import Snake
 import time
 
@@ -12,6 +13,9 @@ screen.tracer(0)
 
 # Instanciar objeto serpiente
 snake = Snake()
+
+# Instanciar objeto comida
+food = Food()
 
 #Movimientos serpiente
 screen.listen()
