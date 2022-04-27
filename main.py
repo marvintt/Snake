@@ -13,6 +13,13 @@ screen.tracer(0)
 # Instanciar objeto serpiente
 snake = Snake()
 
+#Movimientos serpiente
+screen.listen()
+screen.onkey(snake.up,"Up")
+screen.onkey(snake.left,"Left")
+screen.onkey(snake.right,"Right")
+screen.onkey(snake.down,"Down")
+
 game_is_on = True
 
 while game_is_on:
