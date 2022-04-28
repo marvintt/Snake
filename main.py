@@ -22,23 +22,29 @@ food = Food()
 scoreboard = Scoreboard()
 
 
-#Movimientos serpiente
+# Movimientos serpiente
 screen.listen()
-screen.onkey(snake.up,"Up")
-screen.onkey(snake.left,"Left")
-screen.onkey(snake.right,"Right")
-screen.onkey(snake.down,"Down")
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+screen.onkey(snake.down, "Down")
 
 game_is_on = True
 
 while game_is_on:
-    screen.update()    
+    screen.update()
     time.sleep(0.1)
     snake.move_snake()
-    
+
+    # Detectar colision con comida
     if snake.head.distance(food) < 15:
         food.refresh()
         scoreboard.increase_score()
-    
-#Final
+
+    # Detectar colision con pared
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        game_is_on = False
+        scoreboard.game_over()
+
+# Final
 screen.exitonclick()
