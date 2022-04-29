@@ -43,7 +43,7 @@ while game_is_on:
         snake.extend()
 
     # Detectar colision con pared
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+    if snake.head.xcor() > 295 or snake.head.xcor() < -295 or snake.head.ycor() > 295 or snake.head.ycor() < -295:
         game_is_on = False
         scoreboard.game_over()
     
